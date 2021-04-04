@@ -18,7 +18,7 @@ export const publish = (req, res) => {
       if (err.type === customErrorCodes.MESSAGE_NOT_PUBLISHED) {
         return res.status(statusCodes.BAD_REQUEST).send({
           success: false,
-          message: 'Unable to publish message on ${req.params.topic}',
+          message: `Unable to publish message on ${req.params.topic}`,
         })
       }
 
