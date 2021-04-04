@@ -1,0 +1,5 @@
+{
+    "appName" : "HTTP Notification System",
+    "port" : "4000",
+    "host" : "localhost"
+}

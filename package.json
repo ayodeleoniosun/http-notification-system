@@ -1,0 +1,44 @@
+{
+  "name": "http-notification-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/index.js",
+    "build": "babel ./src -d build/",
+    "dev": "NODE_ENV=development nodemon --exec babel-node src/app.js",
+    "lint": "npm run lint:hook -- 'src/**/*.js'",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:hook": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayodeleoniosun/http-notification-system.git"
+  },
+  "author": "Oniosun Ayodele",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayodeleoniosun/http-notification-system/issues"
+  },
+  "homepage": "https://github.com/ayodeleoniosun/http-notification-system#readme",
+  "dependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/register": "^7.13.14",
+    "babel-eslint": "^10.1.0",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.6",
+    "eslint-plugin-babel": "^5.3.1",
+    "express": "^4.17.1",
+    "redis": "^3.1.0",
+    "socket.io": "^4.0.1",
+    "swagger-ui-express": "^4.1.6",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0"
+  }
+}

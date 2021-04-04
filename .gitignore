@@ -1,0 +1,5 @@
+# project dependencies folder
+node_modules/*
+
+# Editors
+.DS_Store

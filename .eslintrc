@@ -1,0 +1,137 @@
+{
+  "root": true,
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "globals": {
+    "Promise": true
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "mocha": true
+  },
+  "rules": {
+    "comma-dangle": [
+      1,
+      "never"
+    ],
+    "quotes": [
+      2,
+      "single",
+      "avoid-escape"
+    ],
+    "no-console": [
+      1,
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "no-empty": [
+      1
+    ],
+    "no-sparse-arrays": [
+      2
+    ],
+    "no-unreachable": [
+      2
+    ],
+    "block-scoped-var": [
+      2
+    ],
+    "curly": [
+      2,
+      "multi-or-nest",
+      "consistent"
+    ],
+    "eqeqeq": [
+      2,
+      "smart"
+    ],
+    "no-new-func": [
+      2
+    ],
+    "no-unused-expressions": [
+      2,
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
+    "no-unused-vars": [
+      1,
+      {
+        "varsIgnorePattern": "React"
+      }
+    ],
+    "no-use-before-define": [
+      1
+    ],
+    "comma-spacing": [
+      2,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "eol-last": [
+      2
+    ],
+    "indent": [
+      2,
+      2,
+      {
+        "MemberExpression": 1,
+        "SwitchCase": 1,
+        "ignoredNodes": ["TemplateLiteral"]
+      }
+    ],
+    "babel/new-cap": [
+      1
+    ],
+    "no-lonely-if": [
+      2
+    ],
+    "no-trailing-spaces": [
+      2,
+      {
+        "skipBlankLines": false
+      }
+    ],
+    "space-infix-ops": [
+      2
+    ],
+    "spaced-comment": [
+      2,
+      "always"
+    ],
+    "arrow-body-style": [
+      1,
+      "as-needed"
+    ],
+    "arrow-spacing": [
+      2,
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "no-const-assign": [2],
+    "babel/object-curly-spacing": [
+      2,
+      "never"
+    ],
+    "prefer-const": [1],
+    "prefer-arrow-callback": [1],
+    "max-len": [
+      2,
+      {
+        "code": 150
+      }
+    ],
+    "semi": ["error", "never"]
+  },
+  "plugins": [
+    "babel"
+  ]
+}
