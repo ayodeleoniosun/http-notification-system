@@ -8,7 +8,7 @@ export const subscribe = (req, res) => {
 
   Promise.try(() => subscriberService.subscribe(req.body, req.params.topic))
     .then(subscriber => {
-      res.status(statusCodes.OK).send({
+      res.status(statusCodes.CREATED).send({
         url : subscriber.url,
         topic: subscriber.topic,
         success: true,

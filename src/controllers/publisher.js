@@ -8,7 +8,7 @@ export const publish = (req, res) => {
 
   Promise.try(() => publisherService.publish(req.body, req.params.topic))
     .then(publisher => {
-      res.status(statusCodes.OK).send({
+      res.status(statusCodes.CREATED).send({
         success: true,
         data: publisher,
         message: `Message successfully published on ${req.params.topic}`
