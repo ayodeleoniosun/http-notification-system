@@ -27,14 +27,9 @@ cd <project-directory>
 npm install
 ```
 
-#### Step 3: Start publisher server
+#### Step 3: Start server
 ```bash
-npm run publisher_server
-```
-
-#### Step 4: Start subscriber servers
-```bash
-npm run subscriber_server
+sh start-server.sh
 ```
 
 ## Deployment
