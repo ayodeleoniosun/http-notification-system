@@ -13,7 +13,7 @@ class PublisherService {
     axios.all([
       port.forEach(port => {
         axios.post(`http://localhost:${port}/subscribe/${topic}`, {
-          data: {topic: topic, data: payload.data}
+          data: {topic: topic, data: payload}
         })
       })
     ])
