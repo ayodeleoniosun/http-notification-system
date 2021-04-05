@@ -10,15 +10,14 @@ export const publish = (req, res) => {
     .then(publisher => {
       res.status(statusCodes.CREATED).send({
         success: true,
-        message: `Message successfully published on ${req.params.topic}`
+        message: `Message successfully published on ${publisher.topic}`
       })
     })
     .catch((err) => {
-        console.log(err)
       if (err.type === customErrorCodes.MESSAGE_NOT_PUBLISHED) {
         return res.status(statusCodes.BAD_REQUEST).send({
           success: false,
-          message: `Unable to publish message on ${req.params.topic}`,
+          message: `Unable to publish message on ${req.params.topic}`
         })
       }
 

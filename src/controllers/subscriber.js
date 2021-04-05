@@ -16,11 +16,10 @@ export const subscribe = (req, res) => {
       })
     })
     .catch((err) => {
-      console.log(err)
       if (err.type === customErrorCodes.SUBSCRIPTION_NOT_CREATED) {
         return res.status(statusCodes.BAD_REQUEST).send({
           success: false,
-          message: `Unable to create subscription on ${req.params.topic}`,
+          message: `Unable to create subscription on ${req.params.topic}`
         })
       }
 
