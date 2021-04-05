@@ -15,6 +15,7 @@ export const publish = (req, res) => {
       })
     })
     .catch((err) => {
+        console.log(err)
       if (err.type === customErrorCodes.MESSAGE_NOT_PUBLISHED) {
         return res.status(statusCodes.BAD_REQUEST).send({
           success: false,
