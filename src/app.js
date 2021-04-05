@@ -22,8 +22,9 @@ app.use( (req, res, next) => {
   next()
 })
 
-require('./routes')(app)
+const publisher_controller = require('./controllers/publisher')
+app.post('/publish/:topic', publisher_controller.publish)
 
 app.listen(config.get('port'), () => {
-  console.log(`${config.get('appName')} is currently running on port ${config.get('port')}`)
+  console.log(`Publisher is currently running on port ${config.get('port')}`)
 })
