@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: HTTP Notification System
+  description: Documentation for the HTTP Notification System (Publisher)
+
+tags:
+  - name: Publish
+    description: Publish Messages To Topics
+  
+paths:
+  /publish/{topic}:
+    post:
+      tags:
+        - Publish
+      summary: Publish message to topic
+      parameters:
+        - name: topic
+          in: path
+          description: Topic
+          schema:
+            $ref: '#/components/schemas/String'
+      requestBody:
+        description: Publish payload
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublishMessage'
+      responses:
+        "201":
+          $ref: '#/components/responses/PublishMessage'
+
+components:
+  responses:
+    PublishMessage:
+      description: Publish response
+      content:
+        "application/json":
+          schema:
+            $ref: '#/components/schemas/PublishMessageResponse'
+  
+  schemas:
+    Boolean:
+      type: boolean
+    String:
+      type: string
+    Object:
+      type: object
+
+    PublishMessage:
+      properties:
+        message:
+          $ref: '#/components/schemas/String'
+    
+    PublishMessageResponse:
+      properties:
+        success:
+          $ref: "#/components/schemas/Boolean"
+        message:
+          $ref: "#/components/schemas/String"

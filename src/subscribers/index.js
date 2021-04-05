@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import ports from '../constants/ports'
+import docsRouter from '../../docs/subscriber/index'
 
 const app = express()
 app.use(bodyParser.json())
@@ -16,6 +17,7 @@ class Subscriber {
   run() {
     const subscriber_controller = require('../controllers/subscriber')
     app.post('/subscribe/:topic', subscriber_controller.subscribe)
+    app.use('/subscriber/docs', docsRouter)
 
     app.listen(this.port, () => {
       console.log(`Subscriber server started on port ${this.port}`)

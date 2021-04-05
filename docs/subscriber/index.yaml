@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: HTTP Notification System
+  description: Documentation for the HTTP Notification System (Subscriber)
+
+tags:
+  - name: Subscription
+    description: Receive Published Messages On Topics
+
+paths:
+  /subscribe/{topic}:
+    post:
+      tags:
+        - Subscription
+      summary: Receive published messages
+      parameters:
+        - name: topic
+          in: path
+          description: Topic
+          schema:
+            $ref: '#/components/schemas/String'
+      requestBody:
+        description: Subscription payload
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subscription'
+      responses:
+        "201":
+          $ref: '#/components/responses/Subscription'
+
+components:
+  responses:
+    Subscription:
+      description: Subscription response
+      content:
+        "application/json":
+          schema:
+            $ref: '#/components/schemas/SubscriptionResponse'
+  
+  schemas:
+    Boolean:
+      type: boolean
+    String:
+      type: string
+    Object:
+      type: object
+
+    Subscription:
+      properties:
+        url:
+          $ref: '#/components/schemas/String'
+    
+    SubscriptionResponse:
+      properties:
+        url:
+          $ref: "#/components/schemas/String"
+        topic:
+          $ref: "#/components/schemas/String"
+        success:
+          $ref: "#/components/schemas/Boolean"
+        message:
+          $ref: "#/components/schemas/String"
