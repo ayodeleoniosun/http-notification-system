@@ -19,7 +19,7 @@ class PublisherService {
     ])
 
     if (publish)
-      return publish
+      return {topic: topic}
     throw new CustomError(customErrorCodes.MESSAGE_NOT_PUBLISHED)
   }
 }
