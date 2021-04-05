@@ -1,6 +1,7 @@
 import redis from 'redis'
 import customErrorCodes from '../constants/customErrorCodes'
 import {CustomError} from '../helpers/errors'
+import ports from '../constants/ports'
 import axios from 'axios'
 
 const publisher = redis.createClient()
@@ -8,10 +9,9 @@ const publisher = redis.createClient()
 class PublisherService {
   publish (payload, topic) {
     const publish = publisher.publish(topic, JSON.stringify(payload))
-    const port = [9000, 9001]
 
     axios.all([
-      port.forEach(port => {
+      ports.forEach(port => {
         axios.post(`http://localhost:${port}/subscribe/${topic}`, {
           data: {topic: topic, data: payload}
         })

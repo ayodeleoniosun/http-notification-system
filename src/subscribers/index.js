@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
+import ports from '../constants/ports'
 
 const app = express()
 app.use(bodyParser.json())
@@ -21,8 +22,6 @@ class Subscriber {
     })
   }
 }
-
-const ports = [9000, 9001]
 
 ports.forEach(port => {
   const subscriber = new Subscriber(port)
