@@ -10,7 +10,6 @@ export const publish = (req, res) => {
     .then(publisher => {
       res.status(statusCodes.CREATED).send({
         success: true,
-        data: publisher,
         message: `Message successfully published on ${req.params.topic}`
       })
     })
