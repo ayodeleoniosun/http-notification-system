@@ -1,1 +1,1 @@
-concurrently "nodemon --exec babel-node src/publisher/index.js" "nodemon --exec babel-node src/subscribers/index.js"
+npm run dev
